@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+  --primarybg: #50d5b7;
+  --secondarybg: #067d68;
+  --textColor: #fbbc05;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-image: linear-gradient(to right, var(--primarybg), var(--secondarybg));
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: linear-gradient(to right, var(--primarybg), var(--secondarybg));
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar .navbar-logo {
+  font-size: 2em;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+.navbar .navbar-logo span {
+  color: #28615b;
+}
+
+.navbar .navbar-nav a {
+  color: #000000;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.3rem;
+}
+
+.navbar .navbar-nav a::after {
+  content: '';
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--textColor);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.5);
+}
+
+/* navbar extra */
+.navbar .navbar-extra a {
+  color: #000000;
+  margin: 0 0.5rem;
+}
+
+#hambuger-menu{
+  display: none;
+}
+/* navbar extra end */
+/* Navbar end */
