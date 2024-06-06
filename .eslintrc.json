@@ -11,7 +11,7 @@
   },
   "rules": {
     "indent": 0,
-    "import/no-extraneous-dependencies": 0,
+   "import/extensions": [0],
     "no-console": 0,
     "no-alert": 0,
     "no-underscore-dangle": 0,

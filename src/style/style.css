@@ -74,3 +74,15 @@ body {
 }
 /* navbar extra end */
 /* Navbar end */
+
+
+/* Product */
+
+/* Misc */
+.custom-divider {
+  max-width: 200px;
+  height: 1px;
+  background: #ccc;
+  margin-inline: auto;
+  margin-block: 24px;
+}

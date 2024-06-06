@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Farmarket</title>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="./src/style/style.css" />
-  </head>
-  <body>
-    <!-- navbar -->
-    <header>
+class AppBarComponent extends HTMLElement {
+  connectedCallback() {
+    this.render();
+  }
+
+  render() {
+    this.innerHTML = `
+       <header>
       <nav class="navbar">
         <a href="#" class="navbar-logo">Farm<span>arket.</span></a>
         <div class="navbar-nav">
           <a href="#">Home</a>
-          <a href="#Produk">Produk</a>
+          <a href="#/products">Produk</a>
           <a href="#Artikel">Artikel</a>
           <a href="#About">Tentang kami</a>
         </div>
@@ -25,10 +21,8 @@
         </div>
       </nav>
     </header>
-    <!-- navbar end -->
+    `;
+  }
+}
 
-    <script>
-      feather.replace();
-    </script>
-  </body>
-</html>
+customElements.define('app-bar-component', AppBarComponent);
