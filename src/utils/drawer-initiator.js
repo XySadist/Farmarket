@@ -1,14 +1,15 @@
 const DrawerInitiator = {
     init({ button, drawer, content }) {
         button.addEventListener('click', (event) => {
-        console.log('\'click');
-        this._toggleDrawer(event, drawer);
+            console.log('\'click');
+            this._toggleDrawer(event, drawer);
         });
 
         content.addEventListener('click', (event) => {
-        if (drawer.classList.contains('active')) {
-            this._closeDrawer(event, drawer);
-        }
+            console.log(`${event}`);
+            // if (drawer.classList.contains('active')) {
+            //     this._closeDrawer(event, drawer);
+            // }
         });
     },
 
