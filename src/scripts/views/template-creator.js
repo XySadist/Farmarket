@@ -28,6 +28,9 @@ const TemplateCreator = {
                         <p class="vegetable-unit">per ${vegetable.unit_total}${vegetable.unit}</p>
                         <h2 class="title-description">Deskripsi</h2>
                         <p class="description">${vegetable.description}</p>
+                        <h2 class="title-description">Manfaat</h2>
+                        <div id="vegetable-benefit-list-component">
+                        </div>
                     </div>
                     <div class="vegetable-action-container">
                         <div class="quantity-container">
@@ -45,6 +48,10 @@ const TemplateCreator = {
                 </div>
           `;
           return vegetableDetailPage;
+    },
+
+    createVegetableBenefitItem(benefit) {
+        return `<p>- ${benefit.name}</p>`;
     },
 };
 
