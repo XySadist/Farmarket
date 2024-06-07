@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename); // get the name of the directory
 
 export const entry = {
   app: resolve(__dirname, 'src/scripts/index.js'),
+  sw: resolve(__dirname, 'src/scripts/sw.js'),
 };
 export const output = {
   filename: '[name].bundle.js',
