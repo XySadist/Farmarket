@@ -1,12 +1,10 @@
 import 'regenerator-runtime'; /* for async await transpile */
 
 import '../style/style.css';
-import '../components/app-bar-component.js';
 // import '../component/jumbotron-component';
 // import '../component/footer-component';
 
 import App from './app.js';
-import swRegister from '../utils/sw-register.js';
 
 const app = new App({
   content: document.querySelector('#main-content'),
@@ -20,5 +18,4 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
-  swRegister();
 });
