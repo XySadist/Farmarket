@@ -1,4 +1,5 @@
 import RemoteData from '../data/remote-data.js';
+import TemplateCreator from '../scripts/views/template-creator.js';
 
 const VegetableRecommendation = {
     async render() {
@@ -15,6 +16,8 @@ const VegetableRecommendation = {
                     <button id="search-button">Cari sayur!</button>
                 </div>
             </div>
+            <div class="vegetable-list" id="vegetable-list-component">
+            </div>
         `;
     },
 
@@ -22,7 +25,7 @@ const VegetableRecommendation = {
         const benefitsInput = document.querySelector('#benefits');
         const benefitsList = document.querySelector('#benefits-list');
         const searchButton = document.querySelector('#search-button');
-        // const vegetableListContainer = document.querySelector('.vegetable-list');
+        const vegetableListComponent = document.querySelector('#vegetable-list-component');
 
         let benefitsData = [];
         const selectedBenefits = [];
@@ -41,11 +44,14 @@ const VegetableRecommendation = {
         });
 
         searchButton.addEventListener('click', async () => {
+            benefitsData = [];
+            vegetableListComponent.innerHTML = '';
             const benefitIds = selectedBenefits.map((benefit) => benefit.id);
             console.log(`selectedBenefits ${benefitIds}`);
-            // const response = await fetch(`https://api.example.com/vegetables?benefits=${selectedBenefits.join(',')}`);
-            // const vegetables = await response.json();
-            // displayVegetables(vegetables);
+            const vegetableList = await RemoteData.getVegetablesByBenefits(benefitIds);
+            vegetableList.forEach((vegetable) => {
+                vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
+            });
         });
 
         function showAutocomplete(benefits) {

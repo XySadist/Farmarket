@@ -46,6 +46,24 @@ const RemoteData = {
 
     throw Error("There's no benefits at the moment :(");
   },
+  async getVegetablesByBenefits(benefitIds) {
+    const response = await fetch(API_ENDPOINT.VEGETABLES_BY_BENEFITS, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ benefitIds }),
+    });
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      throw Error('Failed to fetch vegetables');
+    }
+
+    const { data: vegetables } = responseJson;
+
+    return vegetables;
+  },
 };
 
 export default RemoteData;
