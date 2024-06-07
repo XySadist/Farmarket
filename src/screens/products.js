@@ -1,18 +1,15 @@
+import RemoteData from '../data/remote-data.js';
+// import Utils from '../utils/utils';
+import createVegetableItemTemplate from '../scripts/views/template-creator.js';
+
 const Products = {
     async render() {
         return `
         <div>
             <h2 tabindex=0 class="page-title">Sayuran untuk Anda</h2>
             <div class="custom-divider"></div>
-            <div class="vegetable-list" id="vegetable-list-component">
-                 <div class="vegetable-card-item">
-                    <img src="http://localhost:5000/uploads/1717734457802.png">
-                    <div class="vegetable-card-item-information">
-                        <h3 class="vegetable-title">Wortle</h3>
-                        <p class="vegetable-unit">100g</p>
-                        <h3 class="vegetable-price">Rp2.600</h3>
-                        <button class="add-to-cart">Keranjang <i class="plus-icon fa-sharp fa-solid fa-plus"></i></button>
-                    </div>
+            <div id="vegetable-list-page">
+                <div class="vegetable-list" id="vegetable-list-component">
                 </div>
             </div>
         </div>
@@ -20,7 +17,18 @@ const Products = {
     },
 
     async afterRender() {
-        return '';
+        // const vegetableListPage = document.querySelector('#vegetable-list-page');
+        // vegetableListPage.innerHTML += createLoadingIndicatorTemplate();
+
+        const vegetableList = await RemoteData.getVegetables();
+
+        // const loadingIndicator = vegetableListPage.querySelector('#loading-indicator-component');
+        // Utils.hideElement(loadingIndicator);
+
+        const vegetableListComponent = document.querySelector('#vegetable-list-component');
+        vegetableList.forEach((vegetable) => {
+            vegetableListComponent.innerHTML += createVegetableItemTemplate(vegetable);
+        });
     },
 };
 
