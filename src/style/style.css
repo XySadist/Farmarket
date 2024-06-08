@@ -118,6 +118,10 @@ body {
   border-radius: 8px 8px 0 0;
 }
 
+.vegetable-card-item-information a {
+  color: black;
+}
+
 .vegetable-unit {
   color: var(--secondaryTextColor);
   font-size: 1rem;
@@ -128,6 +132,78 @@ body {
   color: var(--secondarybg);
   font-size: 1rem;
   margin-bottom: 0.4rem;
+}
+
+
+/* Product Detail*/
+.vegetable-detail-page {
+  padding: 1.4rem 7%;
+}
+
+.vegetable-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 1500px;
+  margin-bottom: 2rem;
+}
+
+.vegetable-image-container {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+
+.vegetable-image-container img {
+  width: auto;
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.vegetable-info-container {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left
+}
+
+.vegetable-action-container {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.quantity-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.quantity-container label {
+  margin-right: 0.5rem;
+}
+
+.quantity-container input {
+  width: 60px;
+  padding: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-align: center;
 }
 
 .add-to-cart {
@@ -141,10 +217,6 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 0.5rem;
-}
-
-.plus-icon {
-  margin-left: 0.4rem;
 }
 
 /* Misc */
@@ -169,5 +241,25 @@ body {
 @media (max-width: 768px) {
   .vegetable-list {
     grid-template-columns: 1fr;
+  }
+
+  .vegetable-detail-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+
+  .vegetable-image-container {
+      grid-column: 1;
+      grid-row: 1;
+  }
+
+  .vegetable-info-container {
+      grid-column: 1;
+      grid-row: 2;
+  }
+
+  .vegetable-action-container {
+      grid-column: 1;
+      grid-row: 3;
   }
 }

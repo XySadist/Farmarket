@@ -1,18 +1,16 @@
 import RemoteData from '../data/remote-data.js';
 // import Utils from '../utils/utils';
-import createVegetableItemTemplate from '../scripts/views/template-creator.js';
+import TemplateCreator from '../scripts/views/template-creator.js';
 
 const Products = {
     async render() {
-        return `
-        <div>
+        return `      
             <h2 tabindex=0 class="page-title">Sayuran untuk Anda</h2>
             <div class="custom-divider"></div>
             <div id="vegetable-list-page">
                 <div class="vegetable-list" id="vegetable-list-component">
                 </div>
             </div>
-        </div>
         `;
     },
 
@@ -27,7 +25,7 @@ const Products = {
 
         const vegetableListComponent = document.querySelector('#vegetable-list-component');
         vegetableList.forEach((vegetable) => {
-            vegetableListComponent.innerHTML += createVegetableItemTemplate(vegetable);
+            vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
         });
     },
 };
