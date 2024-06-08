@@ -160,6 +160,12 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   max-width: 1500px;
   margin-bottom: 2rem;
+  margin-top: 1.5rem;
+}
+
+.vegetable-detail-container>.vegetable-card-item-information {
+  text-align: left;
+  align-items: start;
 }
 
 .vegetable-image-container {
@@ -169,6 +175,7 @@ body {
   justify-content: center;
   align-items: center;
   align-items: flex-start;
+  padding: 1rem;
 }
 
 .vegetable-image-container img {
@@ -179,13 +186,8 @@ body {
   border-radius: 8px;
 }
 
-.vegetable-info-container {
-  grid-column: 2;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  text-align: left
+.title-description {
+  margin-top: 16px;
 }
 
 .vegetable-action-container {
@@ -193,8 +195,7 @@ body {
   grid-row: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  padding: 1rem;
 }
 
 .quantity-container {

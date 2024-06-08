@@ -17,14 +17,16 @@ const TemplateCreator = {
 
     createVegetableDetailTemplate(vegetable) {
         const vegetableDetailPage = `
+                <h2>Detail Sayuran</h2>
                 <div class="vegetable-detail-container">
                     <div class="vegetable-image-container">
                         <img src="${CONFIG.BASE_URL}${vegetable.image_url}" alt="Vegetable Image">
                     </div>
-                    <div class="vegetable-info-container">
-                        <h2>${vegetable.name}</h2>
-                        <p class="price">${vegetable.price}</p>
-                        <p class="unit">per ${vegetable.unit_total}${vegetable.unit}</p>
+                    <div class="vegetable-card-item-information">
+                        <h3 class="vegetable-title">${vegetable.name}</h3>
+                        <h3 class="vegetable-price">Rp${vegetable.price}</h3>
+                        <p class="vegetable-unit">per ${vegetable.unit_total}${vegetable.unit}</p>
+                        <h2 class="title-description">Deskripsi</h2>
                         <p class="description">${vegetable.description}</p>
                     </div>
                     <div class="vegetable-action-container">
