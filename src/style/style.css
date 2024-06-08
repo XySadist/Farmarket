@@ -140,6 +140,15 @@ body {
   padding: 1.4rem 7%;
 }
 
+.vegetable-detail-page>h2 {
+  color: white;
+}
+
+.vegetable-detail-page>.vegetable-list {
+  color: white;
+  padding-left: 0;
+}
+
 .vegetable-detail-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;

@@ -16,7 +16,8 @@ const TemplateCreator = {
     },
 
     createVegetableDetailTemplate(vegetable) {
-        return `<div class="vegetable-detail-container">
+        const vegetableDetailPage = `
+                <div class="vegetable-detail-container">
                     <div class="vegetable-image-container">
                         <img src="${CONFIG.BASE_URL}${vegetable.image_url}" alt="Vegetable Image">
                     </div>
@@ -37,7 +38,11 @@ const TemplateCreator = {
                         </button>
                     </div>
                 </div>
+                <h2>Sayuran Lainnya</h2>
+                <div class="vegetable-list" id="vegetable-list-component">
+                </div>
           `;
+          return vegetableDetailPage;
     },
 };
 
