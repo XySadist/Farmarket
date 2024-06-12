@@ -1,17 +1,18 @@
-import 'regenerator-runtime'; /* for async await transpile */
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
 import '../style/style.css';
-// import '../component/jumbotron-component';
-// import '../component/footer-component';
+import '../style/responsive.css';
+import 'regenerator-runtime'; // Jika diperlukan untuk async/await
+import App from './view/app';
 
-import App from './app';
-
+// Mendefinisikan elemen-elemen yang dibutuhkan oleh App
 const app = new App({
-  content: document.querySelector('#main-content'),
-  drawer: document.querySelector('#navigation-drawer-links'),
-  button: document.querySelector('#hambuger-menu'),
+  button: document.querySelector('.navbar-toggler'), // Sesuaikan dengan elemen button yang mengaktifkan offcanvas
+  drawer: document.querySelector('#offcanvasNavbar'),
+  content: document.querySelector('#mainContent'),
 });
 
+// Event listener untuk hashchange dan load untuk merender halaman yang sesuai
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });

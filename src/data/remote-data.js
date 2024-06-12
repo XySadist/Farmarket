@@ -50,7 +50,7 @@ const RemoteData = {
     const response = await fetch(API_ENDPOINT.VEGETABLES_BY_BENEFITS, {
       method: 'POST',
       headers: {
-          'Content-Type': 'application/json',
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({ benefitIds }),
     });
