@@ -64,6 +64,23 @@ const RemoteData = {
 
     return vegetables;
   },
+
+  async getArticles() {
+    const response = await fetch(API_ENDPOINT.ARTICLES);
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      throw Error('Failed to fetch articles');
+    }
+
+    const { data: articles } = responseJson;
+
+    if (articles.length > 0) {
+      return articles;
+    }
+
+    throw Error("There's no articles at the moment :(");
+  },
 };
 
 export default RemoteData;
