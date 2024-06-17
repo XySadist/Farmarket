@@ -1,4 +1,4 @@
-import CONFIG from './config.js';
+import CONFIG from './config';
 
 const API_ENDPOINT = {
   VEGETABLES: `${CONFIG.BASE_URL}vegetables`,

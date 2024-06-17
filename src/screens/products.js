@@ -1,6 +1,6 @@
-import RemoteData from '../data/remote-data.js';
+import RemoteData from '../data/remote-data';
 // import Utils from '../utils/utils';
-import TemplateCreator from '../scripts/views/template-creator.js';
+import TemplateCreator from '../scripts/views/template-creator';
 
 const Products = {
     async render() {
@@ -25,6 +25,7 @@ const Products = {
 
         const vegetableListComponent = document.querySelector('#vegetable-list-component');
         vegetableList.forEach((vegetable) => {
+            // eslint-disable-next-line max-len
             vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
         });
     },

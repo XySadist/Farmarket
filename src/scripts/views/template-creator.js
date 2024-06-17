@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import CONFIG from '../globals/config.js';
+import CONFIG from '../globals/config';
 
 const TemplateCreator = {
     createVegetableItemTemplate(vegetable) {

@@ -4,7 +4,7 @@ import '../style/style.css';
 // import '../component/jumbotron-component';
 // import '../component/footer-component';
 
-import App from './app.js';
+import App from './app';
 
 const app = new App({
   content: document.querySelector('#main-content'),

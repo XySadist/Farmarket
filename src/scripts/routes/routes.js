@@ -1,7 +1,7 @@
-import Products from '../../screens/products.js';
-import ProductDetail from '../../screens/product-detail.js';
-import Home from '../../screens/home.js';
-import VegetableRecommendation from '../../screens/vegetable-recommendation.js';
+import Products from '../../screens/products';
+import ProductDetail from '../../screens/product-detail';
+import Home from '../../screens/home';
+import VegetableRecommendation from '../../screens/vegetable-recommendation';
 
 const routes = {
   '/': Home,

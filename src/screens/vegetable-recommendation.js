@@ -1,5 +1,5 @@
-import RemoteData from '../data/remote-data.js';
-import TemplateCreator from '../scripts/views/template-creator.js';
+import RemoteData from '../data/remote-data';
+import TemplateCreator from '../scripts/views/template-creator';
 
 const VegetableRecommendation = {
     async render() {
@@ -36,7 +36,9 @@ const VegetableRecommendation = {
                 if (benefitsData.length === 0) {
                     benefitsData = await RemoteData.getBenefit();
                 }
-                const filteredBenefits = benefitsData.filter((benefit) => benefit.benefit.toLowerCase().includes(query));
+                const filteredBenefits = benefitsData.filter(
+                    (benefit) => benefit.benefit.toLowerCase().includes(query),
+                );
                 showAutocomplete(filteredBenefits);
             } else {
                 clearAutocomplete();
@@ -50,6 +52,7 @@ const VegetableRecommendation = {
             console.log(`selectedBenefits ${benefitIds}`);
             const vegetableList = await RemoteData.getVegetablesByBenefits(benefitIds);
             vegetableList.forEach((vegetable) => {
+                // eslint-disable-next-line max-len
                 vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
             });
         });

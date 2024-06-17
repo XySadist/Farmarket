@@ -1,4 +1,4 @@
-import API_ENDPOINT from '../scripts/globals/api-endpoint.js';
+import API_ENDPOINT from '../scripts/globals/api-endpoint';
 
 const RemoteData = {
   async getVegetables() {

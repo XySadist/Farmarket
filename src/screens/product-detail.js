@@ -1,6 +1,7 @@
-import RemoteData from '../data/remote-data.js';
-import UrlParser from '../scripts/routes/url-parser.js';
-import TemplateCreator from '../scripts/views/template-creator.js';
+/* eslint-disable max-len */
+import RemoteData from '../data/remote-data';
+import UrlParser from '../scripts/routes/url-parser';
+import TemplateCreator from '../scripts/views/template-creator';
 
 const ProductDetail = {
     async render() {
