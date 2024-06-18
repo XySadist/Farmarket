@@ -5,30 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Farmarket</title>
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="stylesheet" href="./src/style/style.css" />
   </head>
   <body>
     <!-- navbar -->
-    <header>
-      <nav class="navbar">
-        <a href="#" class="navbar-logo">Farm<span>arket.</span></a>
-        <div class="navbar-nav">
-          <a href="#">Home</a>
-          <a href="#Produk">Produk</a>
-          <a href="#Artikel">Artikel</a>
-          <a href="#About">Tentang kami</a>
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top mynavbar p-3">
+      <div class="container">
+        <a class="navbar-brand fs-1 fw-bolder" href="#">Farm<span class="navbar-logo">arket</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Farmarket</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link fs-5" href="#">Home</a>
+              <a class="nav-link fs-5" href="#/products">Produk</a>
+              <a class="nav-link fs-5" href="#">Artikel</a>
+              <a class="nav-link fs-5" href="#">Tentang kami</a>
+              <a href="#" class="ikon"><i data-feather="user"></i></a>
+              <a href="#" class="ikon"><i data-feather="search"></i></a>
+            </div>
+          </div>
         </div>
-        <div class="navbar-extra">
-          <a href="#"><i data-feather="user"></i></a>
-          <a href="#"><i data-feather="search"></i></a>
-          <a href="#" id="hambuger-menu"><i data-feather="menu"></i></a>
-        </div>
-      </nav>
-    </header>
-    <!-- navbar end -->
+      </div>
+    </nav>
 
+    <!-- navbar end -->
+    <!-- main content -->
+    <main id="mainContent" class="mainContent">
+      <div class="container">
+        <div class="row subtext d-lg-flex justify-content-lg-between align-items-center">
+          <div class="col-lg-5 col-md-12 subtext-text">
+            <h1 class="subtext-text-display" data-aos="fade-left">Sayuran <span class="text">Berkualitas </span>untuk<span class="text"> Kesehatan</span> Anda dan</h1>
+            <p class="subtext-text-desc" data-aos="fade-left">Kami menyediakan sayuran segar dan organik langsung dari petani lokal untuk memastikan Anda mendapatkan yang terbaik bagi kesehatan Anda."</p>
+            <div class="anchor-header d-flex" data-aos="fade-left">
+              <a href="#" class="button">Telusuri Produk Kami</a>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-12 subtext-image">
+            <img src="./public/images/chantal-garnier-910GanwBoew-unsplash.jpg" alt="" class="image img-fluid" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- end main content -->
     <script>
       feather.replace();
     </script>
+    <script type="module" src="/src/scripts/index.js"></script>
+    <!-- my scripts -->
   </body>
 </html>
