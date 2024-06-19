@@ -103,6 +103,30 @@ const TemplateCreator = {
               </div>
               `;
   },
+
+  createArticleCarouselItemTemplate(article, active) {
+    if (active) {
+      return `<div class="carousel-item active">
+                <div class="article-item">
+                  <div class="article-content">
+                      <h3>${article.title}</h3>
+                      <p class="description">${article.description}</p>
+                      <button class="read-more"><a href="/#/articles/${article.id}">Read More</a></button>
+                  </div>
+                  </div>
+              </div>`;
+    }
+    return `<div class="carousel-item">
+                <div class="article-item">
+                  <div class="article-content">
+                      <h3>${article.title}</h3>
+                      <p class="description">${article.description}</p>
+                      <a href="/#/articles/${article.id}" class="read-more">Read More</a>
+                    </div>
+                  </div>
+                </div>
+            </div>`;
+  },
 };
 
 export default TemplateCreator;

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import RemoteData from '../../../data/remote-data';
 import TemplateCreator from '../tempalates/template-creator';
 
@@ -21,65 +22,9 @@ const Home = {
       <!-- card -->
       <h2 tabindex="0" class="title">Sayuran untuk anda</h2>
       <div class="custom-divider"></div>
-      
       <div id="vegetable-list-page">
         <div class="vegetable-list" id="vegetable-list-component"></div>
       </div>
-      <!--
-      <div id="vegetable-list-page">
-        <div class="vegetable-list" id="vegetable-list-component"></div>
-      </div>
-      -->
-      <!--
-      <div class="vegetable-slider">
-        <div class="vegetable-card-item">
-          <img src="./public/images/wortel.png" class="wortel-img" />
-          <div class="vegetable-card-item-information">
-            <h3 class="vegetable-title"><a href="/#/products/123">Wortel</a></h3>
-            <p class="vegetable-unit">500 gram</p>
-            <h3 class="vegetable-price">Rp50,000</h3>
-            <button class="add-to-cart">
-              Keranjang <a href="#" class="ikon"><i data-feather="shopping-cart"></i></a>
-            </button>
-          </div>
-        </div>
-
-        <div class="vegetable-card-item">
-          <img src="./public/images/tomato.png" class="tomato-img" />
-          <div class="vegetable-card-item-information">
-            <h3 class="vegetable-title"><a href="/#/products/456">Tomat</a></h3>
-            <p class="vegetable-unit">200 gram</p>
-            <h3 class="vegetable-price">Rp30,000</h3>
-            <button class="add-to-cart">
-              Keranjang <a href="#" class="ikon"><i data-feather="shopping-cart"></i></a>
-            </button>
-          </div>
-        </div>
-        <div class="vegetable-card-item">
-          <img src="./public/images/brokoli.png" class="brokoli-img" />
-          <div class="vegetable-card-item-information">
-            <h3 class="vegetable-title"><a href="/#/products/456">Brokoli</a></h3>
-            <p class="vegetable-unit">200 gram</p>
-            <h3 class="vegetable-price">Rp30,000</h3>
-            <button class="add-to-cart">
-              Keranjang <a href="#" class="ikon"><i data-feather="shopping-cart"></i></a>
-            </button>
-          </div>
-        </div>
-        <div class="vegetable-card-item">
-          <img src="./public/images/terong.jpg" class="terong-img" />
-          <div class="vegetable-card-item-information">
-            <h3 class="vegetable-title"><a href="/#/products/456">Terong Ungu</a></h3>
-            <p class="vegetable-unit">100 gram</p>
-            <h3 class="vegetable-price">Rp30,000</h3>
-            <button class="add-to-cart">
-              Keranjang <a href="#" class="ikon"><i data-feather="shopping-cart"></i></a>
-            </button>
-          </div>
-        </div>
-       
-      </div>
-      -->
       <!-- about -->
       <section class="section-about" id="about">
         <div class="container">
@@ -90,12 +35,12 @@ const Home = {
             <div class="col-12 col-lg-6 col-xl-7 subtext-text">
               <h2 class="subtext-text-display" data-aos="fade-right">Tentang Kami</h2>
               <p class="subtext-text-desc" data-aos="fade-right">
-                <b>Apa Itu Green Haven?</b> <br />
-                Green Haven hadir sebagai solusi inovatif untuk menciptakan ruang hijau, memaksimalkan penggunaan lahan sempit di hunian Anda. Sehingga hunian Anda tidak hanya menjadi nyaman melainkan menjadi dan ramah terhadap
+                <b>Apa Itu Farmarket?</b> <br />
+                Farmarket hadir sebagai solusi inovatif untuk menciptakan ruang hijau, memaksimalkan penggunaan lahan sempit di hunian Anda. Sehingga hunian Anda tidak hanya menjadi nyaman melainkan menjadi dan ramah terhadap
               </p>
               <br />
               <p class="subtext-text-desc" data-aos="fade-right">
-                <b>Bagaimana Bertanam di Green Haven?</b> <br />
+                <b>Bagaimana Bertanam di Farmarket?</b> <br />
                 Kami menyediakan fitur survei berupa form, dimana nanti anda dapat mengisi survei tersebut sesuai dengan kondisi hunian dan keinginan. Nantinya berdasarkan data yang anda kirimkan maka kami akan memberikan rekomendasi jenis
                 bertanam apa yang cocok dan juga tanaman apa saja yagn cocok dengan jenis bertanam tersebut
               </p>
@@ -112,27 +57,7 @@ const Home = {
           <button type="button" data-bs-target="#articleCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="article-item">
-              <h3 class="article-title">Judul Artikel 1</h3>
-              <p class="article-content">Konten artikel pertama. Ini adalah contoh teks untuk artikel pertama dalam carousel.</p>
-              <a href="#" class="read-more">Baca Selengkapnya</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="article-item">
-              <h3 class="article-title">Judul Artikel 2</h3>
-              <p class="article-content">Konten artikel kedua. Ini adalah contoh teks untuk artikel kedua dalam carousel.</p>
-              <a href="#" class="read-more">Baca Selengkapnya</a>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="article-item">
-              <h3 class="article-title">Judul Artikel 3</h3>
-              <p class="article-content">Konten artikel ketiga. Ini adalah contoh teks untuk artikel ketiga dalam carousel.</p>
-              <a href="#" class="read-more">Baca Selengkapnya</a>
-            </div>
-          </div>
+          
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#articleCarousel" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -149,6 +74,7 @@ const Home = {
 
   async afterRender() {
     const vegetableList = await RemoteData.getVegetables();
+    const articleList = await RemoteData.getArticles();
 
     // const loadingIndicator = vegetableListPage.querySelector('#loading-indicator-component');
     // Utils.hideElement(loadingIndicator);
@@ -157,6 +83,14 @@ const Home = {
     vegetableList.forEach((vegetable) => {
       // eslint-disable-next-line max-len
       vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
+    });
+    const articleListComponent = document.querySelector('.carousel-inner');
+    let index = 0;
+    articleList.forEach((vegetable) => {
+      // eslint-disable-next-line max-len
+      const active = index === 0;
+      articleListComponent.innerHTML += TemplateCreator.createArticleCarouselItemTemplate(vegetable, active);
+      index += 1;
     });
   },
 };
