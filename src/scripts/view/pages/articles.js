@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import RemoteData from '../data/remote-data';
+import RemoteData from '../../../data/remote-data';
 // import Utils from '../utils/utils';
-import TemplateCreator from '../scripts/view/tempalates/template-creator';
+import TemplateCreator from '../tempalates/template-creator';
 
 const Articles = {
   async render() {

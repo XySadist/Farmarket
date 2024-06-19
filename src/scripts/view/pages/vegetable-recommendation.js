@@ -1,6 +1,6 @@
 /* eslint-disable no-alert */
-import RemoteData from '../data/remote-data';
-import TemplateCreator from '../scripts/view/tempalates/template-creator';
+import RemoteData from '../../../data/remote-data';
+import TemplateCreator from '../tempalates/template-creator';
 
 const VegetableRecommendation = {
   async render() {
