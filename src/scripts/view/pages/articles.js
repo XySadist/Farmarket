@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import RemoteData from '../../../data/remote-data';
-// import Utils from '../utils/utils';
 import TemplateCreator from '../tempalates/template-creator';
 
 const Articles = {
@@ -17,15 +16,9 @@ const Articles = {
   },
 
   async afterRender() {
-    // const vegetableListPage = document.querySelector('#vegetable-list-page');
-    // vegetableListPage.innerHTML += createLoadingIndicatorTemplate();
-
     const articleList = await RemoteData.getArticles();
 
     console.log(`article ${articleList}`);
-
-    // const loadingIndicator = vegetableListPage.querySelector('#loading-indicator-component');
-    // Utils.hideElement(loadingIndicator);
 
     const articleListComponent = document.querySelector('#article-list-component');
     articleList.forEach((vegetable) => {

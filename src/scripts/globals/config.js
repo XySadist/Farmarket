@@ -1,6 +1,6 @@
 const CONFIG = {
-  BASE_URL: 'http://54.169.187.122:443/',
-  BASE_IMAGE_URL: 'http://54.169.187.122:443/uploads/',
+  BASE_URL: 'https://farmarket-api.onrender.com/',
+  BASE_IMAGE_URL: 'https://farmarket-api.onrender.comuploads/',
 };
 
 export default CONFIG;
