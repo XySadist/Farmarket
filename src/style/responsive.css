@@ -43,3 +43,28 @@
     font-size: 55%;
   }
 } */
+
+@media (max-width: 576px) {
+  .image {
+    display: none;
+  }
+  .button {
+    margin: auto;
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+  .footer-column {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-column {
+    text-align: center;
+  }
+}
