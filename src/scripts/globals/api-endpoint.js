@@ -6,6 +6,7 @@ const API_ENDPOINT = {
   DETAIL_VEGETABLE: (id) => `${CONFIG.BASE_URL}vegetables/${id}`,
   BENEFITS: `${CONFIG.BASE_URL}benefits`,
   ARTICLES: `${CONFIG.BASE_URL}articles`,
+  DETAIL_ARTICLES: (id) => `${CONFIG.BASE_URL}articles/${id}`,
 };
 
 export default API_ENDPOINT;

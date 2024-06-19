@@ -76,6 +76,33 @@ const TemplateCreator = {
                   </div>
               </div>`;
   },
+
+  createDetailArticleTemplate(article) {
+    const date = new Date(article.created_at);
+
+    // Get the day, month, and year from the Date object
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+
+    // Format the date string as "18 May 2024"
+    const formattedDate = `${day} ${month} ${year}`;
+
+    return `<h1 class="detail-article-title">${article.title}</h1>
+              <div class="detail-article-image-card">
+                  <img src="${CONFIG.BASE_URL}${article.image_url}" alt="${article.title} Image" class="detail-article-image">
+              </div>
+              <div class="detail-article-content-card">
+                  <p class="detail-article-date">${formattedDate}</p>
+                  <p class="detail-article-description">${article.description}</p>
+              </div>
+              <h2>Artikel Lainnya</h2>
+              <div id="detail-article-list-page">
+                  <div class="article-list" id="article-list-component">
+                  </div>
+              </div>
+              `;
+  },
 };
 
 export default TemplateCreator;

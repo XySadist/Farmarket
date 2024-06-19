@@ -81,6 +81,19 @@ const RemoteData = {
 
     throw Error("There's no articles at the moment :(");
   },
+
+  async getDetailArticle(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL_ARTICLES(id));
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      throw Error('Failed to fetch article detail');
+    }
+
+    const { data: articleDetail } = responseJson;
+
+    return articleDetail;
+  },
 };
 
 export default RemoteData;
