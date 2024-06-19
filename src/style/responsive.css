@@ -1,62 +1,15 @@
-/* 
-
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
-@media (max-width: 758px) {
-  html {
-    font-size: 62.5%;
-  }
-  #hamburger-menu {
-    display: inline-block;
-  }
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: #fff;
-    width: 30rem;
-    height: 100vh;
-  }
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-  .navbar .navbar-nav a {
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-  }
-  .navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-  .navbar .navbar-nav a:hover::after {
-    transform: scaleX(0.2);
-  }
-}
-
-
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-} */
-
 @media (max-width: 576px) {
   .image {
     display: none;
   }
   .button {
     margin: auto;
-    width: 50%;
+    width: 80%;
     font-size: 16px;
     text-align: center;
   }
 }
 
-/* Responsiveness */
 @media (max-width: 992px) {
   .footer-column {
     text-align: center;
@@ -66,5 +19,33 @@
 @media (max-width: 768px) {
   .footer-column {
     text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .vegetable-card-item {
+    flex: 0 0 80%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 992px) {
+  .vegetable-card-item {
+    flex: 0 0 70%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .vegetable-card-item {
+    flex: 0 0 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .vegetable-card-item {
+    flex: 0 0 100%;
+    margin: auto;
   }
 }
