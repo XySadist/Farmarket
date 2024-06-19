@@ -16,11 +16,11 @@ body {
   font-family: 'Poppins', sans-serif !important;
   background-image: linear-gradient(to right, var(--primarybg), var(--secondarybg));
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .mainContent {
   padding: 50px 0;
-  min-height: 100vh;
 }
 
 .mynavbar {
@@ -44,10 +44,6 @@ body {
 
 .ikon:hover {
   color: #000;
-}
-
-.mainContent {
-  padding-block: 50px;
 }
 
 .subtext-text-display .text {
@@ -95,29 +91,27 @@ body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  margin-top: 5rem; /* Mengurangi margin atas agar tidak terlalu jauh */
+  margin-top: 10rem;
   gap: 30px;
-  justify-content: flex-start; 
-  padding: 20px 10px; /* Mengurangi padding untuk memberikan lebih banyak ruang di layar kecil */
+  justify-content: center;
+  padding: 20px 0;
 }
-
 .vegetable-card-item {
-  flex: 0 0 calc(33.333% - 20px); 
+  flex: 0 0 18rem;
   scroll-snap-align: start;
   background-color: #ffffff;
   border: 1px solid #dddddd;
   border-radius: 8px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  animation: bounce, 1s;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  min-width: 200px; 
 }
-
 .vegetable-card-item:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-10px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .vegetable-card-item img {
@@ -145,7 +139,6 @@ body {
   font-size: 16px;
   margin-top: 10px;
 }
-
 .add-to-cart {
   margin-top: auto;
   padding: 8px 12px;
@@ -184,7 +177,7 @@ body {
 }
 
 .section-about .subtext-image img {
-  max-width: 100%;
+  max-width: 500px;
 }
 
 .section-about .subtext-text-display {
@@ -309,4 +302,8 @@ body {
 
 .footer-social a {
   color: #fff;
+}
+
+.footer-logo{
+  color: #45a049;
 }
