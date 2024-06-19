@@ -11,7 +11,7 @@ const Home = {
             <h1 class="subtext-text-display">Sayuran <span class="text">Berkualitas </span>untuk<span class="text"> Kesehatan</span> Anda dan</h1>
             <p class="subtext-text-desc">Kami menyediakan sayuran segar dan organik langsung dari petani lokal untuk memastikan Anda mendapatkan yang terbaik bagi kesehatan Anda."</p>
             <div class="anchor-header d-flex">
-              <a href="#" class="button">Telusuri Produk Kami</a>
+              <a href="#/recommendation" class="button">Telusuri Produk Kami</a>
             </div>
           </div>
           <div class="col-lg-5 col-md-12 subtext-image">
