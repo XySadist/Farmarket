@@ -1,11 +1,11 @@
 const Home = {
-    async render() {
-        return '<h2>Landing Page</h2>';
-    },
+  async render() {
+    return '<h2>Landing Page</h2>';
+  },
 
-    async afterRender() {
-        return '';
-    },
+  async afterRender() {
+    return '';
+  },
 };
 
 export default Home;

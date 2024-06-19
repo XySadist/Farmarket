@@ -1,6 +1,6 @@
 import RemoteData from '../data/remote-data';
 // import Utils from '../utils/utils';
-import TemplateCreator from '../scripts/views/template-creator';
+import TemplateCreator from '../scripts/view/tempalates/template-creator';
 
 const Products = {
     async render() {
