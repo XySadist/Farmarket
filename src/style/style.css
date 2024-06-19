@@ -232,7 +232,6 @@ body {
 }
 
 /* Search Recommendation */
-
 .recommendation-page {
   padding: 1.4rem 7%;
 }
@@ -293,6 +292,82 @@ body {
   font-size: 1rem;
 }
 
+/* Articles */
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 5%;
+  margin: auto;
+}
+
+.article-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  max-height: 250px;
+  display: block;
+  object-fit: cover;
+}
+
+.article-content {
+  padding: 1rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-content h3 {
+  margin: 0 0 0.5rem 0;
+}
+
+.article-content .description {
+  margin: 0;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+}
+
+.article-content .read-more {
+  background-color: white;
+  color: var(--secondarybg);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.read-more>a {
+  text-decoration: none;
+  color: var(--secondarybg);
+}
+
+.article-content .date {
+  margin-top: 0.5rem;
+  margin-left: 0.2rem;
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.article-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
 
 /* Misc */
 .custom-divider {
@@ -338,10 +413,26 @@ body {
     grid-row: 3;
   }
 
+  .article-list {
+    grid-template-columns: 1fr;
+  }
+
+  .article-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .article-footer .read-more,
+  .article-footer .date {
+      margin-top: 0.5rem;
+      width: 100%;
+      text-align: center;
+  }
+
   #mainContent {
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    /* display: flex; */
+    /* align-items: center; */
   }
 
   .hero {

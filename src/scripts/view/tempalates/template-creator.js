@@ -53,6 +53,29 @@ const TemplateCreator = {
   createVegetableBenefitItem(benefit) {
     return `<p>- ${benefit.name}</p>`;
   },
+
+  createArticleItem(article) {
+    const date = new Date(article.created_at);
+
+    // Get the day, month, and year from the Date object
+    const day = date.getDate();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const year = date.getFullYear();
+
+    // Format the date string as "18 May 2024"
+    const formattedDate = `${day} ${month} ${year}`;
+    return `<div class="article-card">
+                  <img src="${CONFIG.BASE_URL}${article.image_url}" alt="${article.title} Article Image">
+                  <div class="article-content">
+                      <h3>${article.title}</h3>
+                      <p class="description">${article.description}</p>
+                      <div class="article-footer">
+                        <p class="date">${formattedDate}</p>
+                        <button class="read-more"><a href="/#/articles/${article.id}">Read More</a></button>
+                    </div>
+                  </div>
+              </div>`;
+  },
 };
 
 export default TemplateCreator;

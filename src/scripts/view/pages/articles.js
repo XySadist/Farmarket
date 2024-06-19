@@ -10,6 +10,7 @@ const Articles = {
             <div class="custom-divider"></div>
             <div id="article-list-page">
                 <div class="article-list" id="article-list-component">
+                  
                 </div>
             </div>
         `;
@@ -26,11 +27,11 @@ const Articles = {
     // const loadingIndicator = vegetableListPage.querySelector('#loading-indicator-component');
     // Utils.hideElement(loadingIndicator);
 
-    // const vegetableListComponent = document.querySelector('#vegetable-list-component');
-    // vegetableList.forEach((vegetable) => {
-    //     // eslint-disable-next-line max-len
-    //     vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
-    // });
+    const articleListComponent = document.querySelector('#article-list-component');
+    articleList.forEach((vegetable) => {
+      // eslint-disable-next-line max-len
+      articleListComponent.innerHTML += TemplateCreator.createArticleItem(vegetable);
+    });
   },
 };
 
