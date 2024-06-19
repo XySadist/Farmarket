@@ -832,13 +832,13 @@ body {
 .cart-container {
   padding: 1rem 5%;
   max-width: 1500px;
-  margin: 0 auto;
+  margin-inline: auto;
+  margin-bottom: 72px;
 }
 
 .cart-title {
   text-align: center;
   margin-bottom: 1rem;
-  
 }
 
 .cart-item {
@@ -926,6 +926,90 @@ body {
   margin-bottom: 0.4rem;
 }
 
+.cart-summary {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+#order-button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  background-color: var(--secondarybg);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#order-button:hover {
+  background-color: #0056b3;
+}
+
+.total-price {
+  color: var(--secondarybg);
+  font-weight: 500;
+}
+
+/* Transaction Detail */
+.transaction-detail-page {
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.transaction-detail-page-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.transaction-detail-page-card>h2 {
+  margin-top: 0;
+}
+
+.transaction-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  display: flex;
+}
+
+.transaction-item:last-child {
+  border-bottom: none;
+}
+
+.transaction-item p {
+  margin: 5px 0;
+}
+
+.transaction-overview-card,
+.transaction-items-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.transaction-overview-card h2,
+.transaction-items-card h2 {
+  margin-top: 0;
+}
+
+.transaction-item>img {
+  max-width: 80px;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
   .cart-item {
@@ -946,15 +1030,37 @@ body {
   .delete-btn {
     margin-top: 0.5rem;
   }
+
+  .transaction-detail-page {
+    padding: 10px;
+  }
+
+  .transaction-detail-page-card {
+    padding: 10px;
+  }
+
+  .transaction-item p {
+    margin: 5px 0;
+    font-size: 0.9em;
+  }
+
+  .transaction-item>img {
+    margin: 0 10px 0 0;
+  }
 }
 
 @media (min-width: 768px) {
   .cart-item-quantity {
     margin-right: 0.5rem;
+  }
 }
-}
-
 
 .footer-logo{
   color: #45a049;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

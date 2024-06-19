@@ -5,6 +5,7 @@ import VegetableRecommendation from '../view/pages/vegetable-recommendation';
 import Articles from '../view/pages/articles';
 import ArticleDetail from '../view/pages/article-detail';
 import Cart from '../view/pages/cart';
+import TransactionDetail from '../view/pages/transaction-detail';
 
 const routes = {
   '/': Home,
@@ -14,6 +15,7 @@ const routes = {
   '/articles': Articles,
   '/articles/:id': ArticleDetail,
   '/cart': Cart,
+  '/transactions/:id': TransactionDetail,
 };
 
 export default routes;

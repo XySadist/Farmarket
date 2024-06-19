@@ -12,19 +12,11 @@ const ArticleDetail = {
   },
 
   async afterRender() {
-    // const vegetableListPage = document.querySelector('#vegetable-list-page');
-    // vegetableListPage.innerHTML += createLoadingIndicatorTemplate();
-
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const articleDetail = await RemoteData.getDetailArticle(url.id);
 
     const articleDetailPage = document.querySelector('#article-detail-page');
     articleDetailPage.innerHTML += TemplateCreator.createDetailArticleTemplate(articleDetail);
-
-    // const vegetableBenefitListComponent = document.querySelector('#article-list-component');
-    // vegetableDetail.benefits.forEach((benefit) => {
-    //   vegetableBenefitListComponent.innerHTML += TemplateCreator.createArticleItem(benefit);
-    // });
 
     const articleList = await RemoteData.getArticles();
 

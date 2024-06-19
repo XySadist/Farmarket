@@ -94,6 +94,38 @@ const RemoteData = {
 
     return articleDetail;
   },
+
+  async postOrder(payload) {
+    const response = await fetch(API_ENDPOINT.TRANSACTIONS, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload),
+    });
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      throw Error('Failed to post transaction');
+    }
+
+    const { data } = responseJson;
+
+    return data;
+  },
+
+  async getTransactionDetail(id) {
+    const response = await fetch(API_ENDPOINT.DETAIL_TRANSACTIONS(id));
+    const responseJson = await response.json();
+
+    if (responseJson.error) {
+      throw Error('Failed to fetch transaction detail');
+    }
+
+    const { data: transactionDetail } = responseJson;
+
+    return transactionDetail;
+  },
 };
 
 export default RemoteData;

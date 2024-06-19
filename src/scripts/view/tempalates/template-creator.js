@@ -9,7 +9,7 @@ const TemplateCreator = {
                         <h3 class="vegetable-title"><a href="/#/products/${vegetable.id}">${vegetable.name}</a></h3>
                         <p class="vegetable-unit">${vegetable.unit_total}${vegetable.unit}</p>
                         <h3 class="vegetable-price">Rp${vegetable.price}</h3>
-                        <button class="add-to-cart">Keranjang <i class="plus-icon fa-sharp fa-solid fa-plus"></i></button>
+                        <button class="add-to-cart" data-id="${vegetable.id}">Keranjang <i class="plus-icon fa-sharp fa-solid fa-plus"></i></button>
                     </div>
                 </div>
     `;
@@ -37,7 +37,7 @@ const TemplateCreator = {
                             <label for="quantity">Jumlah:</label>
                             <input type="number" id="quantity" name="quantity" min="1" value="1">
                         </div>
-                        <button class="add-to-cart">
+                        <button class="add-to-cart" id="add-to-cart-vegetable-detail">
                             Keranjang 
                             <i class="plus-icon fa-sharp fa-solid fa-plus"></i>
                         </button>
@@ -126,6 +126,65 @@ const TemplateCreator = {
                   </div>
                 </div>
             </div>`;
+  },
+
+  createVegetableCartItem(vegetable) {
+    return `
+      <div class="cart-item">
+          <img src="${CONFIG.BASE_URL}${vegetable.image}" alt="${vegetable.name} Image" class="cart-item-image">
+          <div class="cart-item-details">
+              <h3 class="cart-item-name">${vegetable.name}</h3>
+              <h3 class="cart-item-price">Rp${vegetable.price}</h3>
+              <p class="cart-item-unit">100g</p>
+          </div>
+          <div class="cart-item-quantity">
+              <button class="quantity-btn subtract" data-id="${vegetable.id}">-</button>
+              <input type="number" disabled value="${vegetable.quantity}" class="quantity-input">
+              <button class="quantity-btn add" data-id="${vegetable.id}">+</button>
+          </div>
+          <button class="delete-btn" data-id="${vegetable.id}">Delete</button>
+      </div>
+    `;
+  },
+
+  createOrderOverviewTemplate(totalItem, totalPrice) {
+    return `
+      <div id="cart-summary" class="cart-summary">
+        <p class="cart-item-name">Total Pesanan: <span id="total-items" class="total-price">${totalItem}</span></p>
+        <p class="cart-item-name">Total Harga: <span id="total-price" class="total-price">Rp${totalPrice}</span></p>
+        <button id="order-button" class="order-button">Pesan</button>
+      </div>
+    `;
+  },
+
+  createTransactionOverViewTemplate(transaction) {
+    return `
+          <div class="transaction-overview-card">
+              <h2>Ringkasan Transaksi</h2>
+              <p>ID Transaksi : <span id="transaction-id"><strong>${transaction.id}</strong></span></p>
+              <p>Total Harga : <span id="total-price"><strong>Rp ${transaction.total_amount}</strong></span></p>
+              <p>Transfer ke BCA Virtual Account : <strong>823085201434</strong></p>
+          </div>
+
+           <div class="transaction-items-card" id="transaction-item">
+                    <h2>Sayur yang anda beli</h2>
+                    <div id="transaction-items">
+                      </div>
+                </div>
+            </div>
+    `;
+  },
+
+  createTransactionOverviewItemTemplate(item) {
+    return `<div class="transaction-item">
+                    <img src="${CONFIG.BASE_URL}${item.image_url}" alt="${item.name}">
+                    <div>
+                      <p>${item.name}</p>
+                      <p>Harga per item : <strong>Rp${item.price}</strong></p>
+                      <p>Jumlah : <strong>${item.quantity}</strong></p>
+                      <p>Sub Total: <strong>Rp ${item.price * item.quantity}</strong></p>
+                    </div>
+                </div>`;
   },
 };
 

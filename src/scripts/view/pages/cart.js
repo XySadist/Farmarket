@@ -2,6 +2,7 @@
 import RemoteData from '../../../data/remote-data';
 import UrlParser from '../../routes/url-parser';
 import TemplateCreator from '../tempalates/template-creator';
+import VegetableCartIdb from '../../../data/cart-data';
 
 const Cart = {
   async render() {
@@ -9,19 +10,9 @@ const Cart = {
        <div class="cart-container">
             <h2 tabindex=0 class="page-title">Keranjang belanja anda</h2>
             <div class="custom-divider"></div>
-            <div class="cart-item">
-                <img src="image.jpg" alt="Vegetable Image" class="cart-item-image">
-                <div class="cart-item-details">
-                    <h3 class="cart-item-name">Vegetable Name</h3>
-                    <h3 class="cart-item-price">Rp10000</h3>
-                    <p class="cart-item-unit">100g</p>
-                </div>
-                <div class="cart-item-quantity">
-                    <button class="quantity-btn subtract">-</button>
-                    <input type="number" value="1" class="quantity-input">
-                    <button class="quantity-btn add">+</button>
-                </div>
-                <button class="delete-btn">Delete</button>
+            <div id="vegetable-cart-list">
+            </div>
+            <div id="vegetable-order-overview">
             </div>
             <!-- Add more cart items as needed -->
         </div>
@@ -29,23 +20,71 @@ const Cart = {
   },
 
   async afterRender() {
-    // const url = UrlParser.parseActiveUrlWithoutCombiner();
-    // const vegetableDetail = await RemoteData.getDetailVegetable(url.id);
+    const vegetableCartList = await VegetableCartIdb.getVegetableCartItems();
 
-    // const vegetableDetailPage = document.querySelector('#vegetable-detail-page');
-    // vegetableDetailPage.innerHTML += TemplateCreator.createVegetableDetailTemplate(vegetableDetail);
+    const vegetableCartListComponent = document.querySelector('#vegetable-cart-list');
+    const vegetableOrderOverview = document.querySelector('#vegetable-order-overview');
 
-    // const vegetableBenefitListComponent = document.querySelector('#vegetable-benefit-list-component');
-    // vegetableDetail.benefits.forEach((benefit) => {
-    //   vegetableBenefitListComponent.innerHTML += TemplateCreator.createVegetableBenefitItem(benefit);
-    // });
+    vegetableCartListComponent.innerHTML = '';
+    vegetableOrderOverview.innerHTML = '';
 
-    // const vegetableList = await RemoteData.getVegetables();
+    if (vegetableCartList.length > 0) {
+      const totalItems = vegetableCartList.reduce((acc, item) => acc + item.quantity, 0);
+      const totalPrice = vegetableCartList.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
-    // const vegetableListComponent = document.querySelector('#vegetable-list-component');
-    // vegetableList.forEach((vegetable) => {
-    //   vegetableListComponent.innerHTML += TemplateCreator.createVegetableItemTemplate(vegetable);
-    // });
+      vegetableOrderOverview.innerHTML = TemplateCreator.createOrderOverviewTemplate(totalItems, totalPrice);
+    }
+
+    vegetableCartList.forEach((vegetable) => {
+      vegetableCartListComponent.innerHTML += TemplateCreator.createVegetableCartItem(vegetable);
+    });
+
+    vegetableCartListComponent.addEventListener('click', async (event) => {
+      if (event.target.classList.contains('quantity-btn')) {
+        const input = event.target.parentElement.querySelector('.quantity-input').value;
+        if (event.target.classList.contains('subtract')) {
+          const quantity = parseInt(input, 10);
+
+          if (quantity === 1) return;
+
+          await VegetableCartIdb.updateQuantity(event.target.dataset.id, quantity, 'substract');
+        }
+
+        if (event.target.classList.contains('add')) {
+          const quantity = parseInt(input, 10);
+
+          await VegetableCartIdb.updateQuantity(event.target.dataset.id, quantity, 'add');
+        }
+
+        this.afterRender();
+      }
+
+      if (event.target.classList.contains('delete-btn')) {
+        VegetableCartIdb.deleteVegetableCartItem(event.target.dataset.id);
+
+        this.afterRender();
+      }
+    });
+
+    const orderButton = document.querySelector('#order-button');
+    orderButton.addEventListener('click', async (event) => {
+      const order = {
+        items: vegetableCartList.map((item) => ({
+          vegetableId: item.id,
+          quantity: item.quantity,
+        })),
+      };
+
+      const transactionId = await RemoteData.postOrder(order);
+      await VegetableCartIdb.clearAllData();
+
+      this.afterRender();
+      const baseUrl = document.location.origin;
+
+      const url = `${baseUrl}/#/transactions/${transactionId}`;
+
+      window.location.href = url;
+    });
   },
 };
 
