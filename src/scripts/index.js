@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
 import '../style/style.css';
 import '../style/responsive.css';
+import 'animate.css';
 import 'regenerator-runtime'; // Jika diperlukan untuk async/await
 import App from './view/app';
 
