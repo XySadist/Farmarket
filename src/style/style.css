@@ -16,21 +16,21 @@ body {
   font-family: 'Poppins', sans-serif !important;
   background-image: linear-gradient(to right, var(--primarybg), var(--secondarybg));
   background-repeat: no-repeat;
+  min-height: 100vh;
 }
 
 .mainContent {
   padding: 50px 0;
-  min-height: 100vh;
 }
 
 .mynavbar {
-  /* background-image: linear-gradient(to right, var(--primarybg), var(--secondarybg)); */
   background-color: #dddddd;
 }
 
 .navbar-logo {
   color: #067d68;
 }
+
 .navbar .nav-link {
   font-size: 1rem;
 }
@@ -38,16 +38,12 @@ body {
 .ikon {
   font-size: 20px;
   padding: 8px;
-  color: rgb(0, 0, 0, 60%);
+  color: rgba(0, 0, 0, 0.6);
   transition: color 0.5s ease;
 }
+
 .ikon:hover {
   color: #000;
-}
-
-/* main content */
-.mainContent {
-  padding-block: 50px;
 }
 
 .subtext-text-display .text {
@@ -66,7 +62,7 @@ body {
   background-color: #28615b;
   text-decoration: none;
   color: #fff;
-  padding: 5px;
+  padding: 10px;
   border-radius: 10px;
 }
 /* 
@@ -544,6 +540,7 @@ body {
   text-align: center;
   color: white;
 }
+
 .custom-divider {
   max-width: 200px;
   height: 1px;
@@ -603,7 +600,7 @@ body {
       text-align: center;
   }
 }
-/* Card */
+/* card */
 .vegetable-slider {
   display: flex;
   overflow-x: auto;
@@ -623,7 +620,6 @@ body {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   animation: bounce, 1s;
-  /* Layout internal kartu */
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -639,7 +635,6 @@ body {
   object-fit: cover;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  background-position: center;
 }
 
 .vegetable-card-item-information {
@@ -675,12 +670,10 @@ body {
 }
 
 .add-to-cart i {
-  margin-left: 5px; /* Jarak kiri ikon dari teks tombol */
+  margin-left: 5px;
 }
 
-/* end Card */
-
-/* end main content */
+/* end card */
 
 .section-about {
   display: flex;
@@ -690,32 +683,28 @@ body {
   align-items: flex-end;
   background-color: #fff;
 }
+
 .section-about .subtext {
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: stretch;
 }
+
 .section-about .subtext-image img {
   max-width: 500px;
 }
+
 .section-about .subtext-text-display {
   color: var(--bs-black);
-
-  /* H2 */
-  font-family: Poppins;
-  font-size: 48px;
-  font-style: normal;
+  font-size: 36px;
   font-weight: 700;
-  line-height: normal;
 }
 
 .section-about .subtext-text-desc {
   color: var(--bs-black);
   text-align: justify;
-  font-family: Poppins;
   font-size: 20px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
@@ -724,8 +713,6 @@ body {
   font-size: 28px;
 }
 
-/* Artikel */
-/* Carousel */
 .carousel {
   margin-top: 2rem;
 }
@@ -772,9 +759,6 @@ body {
   background-color: #4caf50;
 }
 
-/* end Artikel */
-
-/* Footer */
 .footer {
   background-color: var(--secondarybg);
   color: white;
@@ -831,7 +815,7 @@ body {
   padding-top: 20px;
 }
 
-.footer-social a{
+.footer-social a {
   color: #fff;
 }
 
@@ -971,3 +955,6 @@ body {
 }
 
 
+.footer-logo{
+  color: #45a049;
+}

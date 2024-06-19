@@ -1,70 +1,87 @@
-/* 
+/* Responsive adjustments for other components */
 
-@media (max-width: 1366px) {
-  html {
-    font-size: 75%;
-  }
-}
-@media (max-width: 758px) {
-  html {
-    font-size: 62.5%;
-  }
-  #hamburger-menu {
-    display: inline-block;
-  }
-  .navbar .navbar-nav {
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    background-color: #fff;
-    width: 30rem;
-    height: 100vh;
-  }
-  .navbar .navbar-nav.active {
-    right: 0;
-  }
-  .navbar .navbar-nav a {
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
-  }
-  .navbar .navbar-nav a::after {
-    transform-origin: 0 0;
-  }
-  .navbar .navbar-nav a:hover::after {
-    transform: scaleX(0.2);
-  }
-}
-
-
-@media (max-width: 450px) {
-  html {
-    font-size: 55%;
-  }
-} */
-
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
   .image {
-    display: none;
-  }
-  .button {
-    margin: auto;
-    width: 50%;
-    font-size: 16px;
-    text-align: center;
+    width: 250px;
+    height: 250px;
   }
 }
 
-/* Responsiveness */
 @media (max-width: 992px) {
-  .footer-column {
-    text-align: center;
+  .mainContent {
+    padding: 30px 0;
+  }
+  .image {
+    width: 200px;
+    height: 200px;
+  }
+  .section-about {
+    padding-block: 50px;
   }
 }
 
 @media (max-width: 768px) {
-  .footer-column {
-    text-align: center;
+  .navbar .nav-link {
+    font-size: 0.9rem;
+  }
+  .subtext-text-display {
+    font-size: 28px;
+  }
+  .subtext-text-desc {
+    font-size: 18px;
+  }
+  .image {
+    width: 150px;
+    height: 150px;
+  }
+  .section-about .subtext-text-display {
+    font-size: 28px;
+  }
+  .section-about .subtext-text-desc {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainContent {
+    padding: 20px 0;
+  }
+  .title {
+    font-size: 1.5rem;
+  }
+  .custom-divider {
+    max-width: 150px;
+    height: 1px;
+  }
+  .section-about {
+    padding-block: 30px;
+  }
+  .section-about .subtext-image img {
+    max-width: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .vegetable-card-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .vegetable-card-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .vegetable-card-item {
+    flex: 0 0 calc(100% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .vegetable-card-item {
+    flex: 0 0 calc(100% - 20px);
   }
 }

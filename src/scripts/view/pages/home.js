@@ -16,7 +16,7 @@ const Home = {
               <a href="#/recommendation" class="button">Telusuri Produk Kami</a>
             </div>
           </div>
-          <div class="col-lg-5 col-md-12 subtext-image">
+          <div class="col-lg-5 col-md-12 subtext-image d-none d-lg-block">
             <img src="${imageHero}" alt="" class="image animate__animated animate__fadeInRight" />
           </div>
         </div>
@@ -32,19 +32,19 @@ const Home = {
         <div class="container">
           <div class="subtext d-flex align-items-center justify-content-between flex-column flex-lg-row">
             <div class="col-12 col-lg-6 col-xl-5 subtext-image">
-              <img src="${imagePetani}" alt="" class="image-about animate__animated animate__fadeInLeft rounded-4" />
+              <img src="${imagePetani}" alt="" class="img rounded-4" />
             </div>
             <div class="col-12 col-lg-6 col-xl-7 subtext-text">
               <h2 class="subtext-text-display" data-aos="fade-right">Tentang Kami</h2>
               <p class="subtext-text-desc" data-aos="fade-right">
-                <b>Apa Itu Farmarket?</b> <br />
-                Farmarket hadir sebagai solusi inovatif untuk menciptakan ruang hijau, memaksimalkan penggunaan lahan sempit di hunian Anda. Sehingga hunian Anda tidak hanya menjadi nyaman melainkan menjadi dan ramah terhadap
+                <b>Apa Itu Farmarket??</b> <br />
+                Kami menghubungkan petani lokal dengan konsumen yang mencari sayuran segar dan berkualitas. Melalui platform ini, konsumen dapat dengan mudah membeli berbagai jenis sayuran yang ditanam dan dipanen langsung oleh petani
+                setempat, memastikan kesegaran dan kualitas produk.
               </p>
               <br />
               <p class="subtext-text-desc" data-aos="fade-right">
-                <b>Bagaimana Bertanam di Farmarket?</b> <br />
-                Kami menyediakan fitur survei berupa form, dimana nanti anda dapat mengisi survei tersebut sesuai dengan kondisi hunian dan keinginan. Nantinya berdasarkan data yang anda kirimkan maka kami akan memberikan rekomendasi jenis
-                bertanam apa yang cocok dan juga tanaman apa saja yagn cocok dengan jenis bertanam tersebut
+                <b>Bagimana cara belanja di Farmarket?</b> <br />
+                kami menyediakan fitur berupa sebuah form, dimana user bisa mengisi pilihan manfaat sayur, dimana data hasil form tersebut kami akan memberikan rekomendasi sayuran yang cocok sesuai kebutuhan anda
               </p>
             </div>
           </div>
