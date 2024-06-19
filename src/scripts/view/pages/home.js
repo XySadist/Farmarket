@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import RemoteData from '../../../data/remote-data';
 import TemplateCreator from '../tempalates/template-creator';
+import imageHero from '../../../../public/images/hero.jpg';
+import imagePetani from '../../../../public/images/petani.jpg';
 
 const Home = {
   async render() {
@@ -15,7 +17,7 @@ const Home = {
             </div>
           </div>
           <div class="col-lg-5 col-md-12 subtext-image">
-            <img src="./public/images/chantal-garnier-910GanwBoew-unsplash.jpg" alt="" class="image animate__animated animate__fadeInRight" />
+            <img src="${imageHero}" alt="" class="image animate__animated animate__fadeInRight" />
           </div>
         </div>
       </div>
@@ -30,7 +32,7 @@ const Home = {
         <div class="container">
           <div class="subtext d-flex align-items-center justify-content-between flex-column flex-lg-row">
             <div class="col-12 col-lg-6 col-xl-5 subtext-image">
-              <img src="./public/images/petani.jpg" alt="" class="image-about animate__animated animate__fadeInLeft rounded-4" />
+              <img src="${imagePetani}" alt="" class="image-about animate__animated animate__fadeInLeft rounded-4" />
             </div>
             <div class="col-12 col-lg-6 col-xl-7 subtext-text">
               <h2 class="subtext-text-display" data-aos="fade-right">Tentang Kami</h2>
