@@ -30,7 +30,7 @@ const Home = {
         <div class="container">
           <div class="subtext d-flex align-items-center justify-content-between flex-column flex-lg-row">
             <div class="col-12 col-lg-6 col-xl-5 subtext-image">
-              <img src="./public/images/petani.jpg" alt="" class="img rounded-4" />
+              <img src="./public/images/petani.jpg" alt="" class="image-about animate__animated animate__fadeInLeft rounded-4" />
             </div>
             <div class="col-12 col-lg-6 col-xl-7 subtext-text">
               <h2 class="subtext-text-display" data-aos="fade-right">Tentang Kami</h2>

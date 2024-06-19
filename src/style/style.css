@@ -836,3 +836,11 @@ body {
 }
 
 /*end Footer */
+
+.image-about {
+  width: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: opacity 1s ease-in-out;
+}
+
