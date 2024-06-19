@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-import CONFIG from '../globals/config';
+import CONFIG from '../../globals/config';
 
 const TemplateCreator = {
-    createVegetableItemTemplate(vegetable) {
-        return `<div class="vegetable-card-item">
+  createVegetableItemTemplate(vegetable) {
+    return `<div class="vegetable-card-item">
                     <img src="${CONFIG.BASE_URL}${vegetable.image_url}">
                     <div class="vegetable-card-item-information">
                         <h3 class="vegetable-title"><a href="/#/products/${vegetable.id}">${vegetable.name}</a></h3>
@@ -13,10 +13,10 @@ const TemplateCreator = {
                     </div>
                 </div>
     `;
-    },
+  },
 
-    createVegetableDetailTemplate(vegetable) {
-        const vegetableDetailPage = `
+  createVegetableDetailTemplate(vegetable) {
+    const vegetableDetailPage = `
                 <h2>Detail Sayuran</h2>
                 <div class="vegetable-detail-container">
                     <div class="vegetable-image-container">
@@ -47,12 +47,12 @@ const TemplateCreator = {
                 <div class="vegetable-list" id="vegetable-list-component">
                 </div>
           `;
-          return vegetableDetailPage;
-    },
+    return vegetableDetailPage;
+  },
 
-    createVegetableBenefitItem(benefit) {
-        return `<p>- ${benefit.name}</p>`;
-    },
+  createVegetableBenefitItem(benefit) {
+    return `<p>- ${benefit.name}</p>`;
+  },
 };
 
 export default TemplateCreator;
