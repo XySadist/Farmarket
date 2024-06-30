@@ -1,10 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap';
+import * as bootstrap from 'bootstrap';
 import '../style/style.css';
 import '../style/responsive.css';
 import 'animate.css';
 import 'regenerator-runtime'; // Jika diperlukan untuk async/await
 import App from './view/app';
+
+window.bootstrap = bootstrap;
 
 // Mendefinisikan elemen-elemen yang dibutuhkan oleh App
 const app = new App({
